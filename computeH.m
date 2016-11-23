@@ -11,7 +11,7 @@ function H = computeH(points, new_points)
         P(2 * i - 1,:) = [points(i,1), points(i,2), 1, 0, 0, 0, -points(i,1) * new_points(i,1), -points(i,2) * new_points(i,1), -new_points(i,1)];
         P(2 * i,:) = [0, 0, 0, points(i,1), points(i,2), 1, -points(i,1) * new_points(i,2), -points(i,2) * new_points(i,2), -new_points(i,2)];
     end
-    [~,~,V] = svd(P,'econ');
+    [~,~,V] = svd(P);
     V = V';
     H = reshape(V(end,:),[3,3])';
 end
