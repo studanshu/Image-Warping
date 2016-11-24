@@ -10,7 +10,7 @@ plotsquare([points ones(4,1)]');
 new_points = [[1, 1];
               [1, 500];
               [200, 500];
-              [200, 1]]; % choose your own set of points to warp your ad too
+              [200, 1]]; % your own set of points to warp your ad too
 H = computeH(points, new_points);
 % warp will return just the ad rectified
 warped_img = warp(I1, new_points, H);
